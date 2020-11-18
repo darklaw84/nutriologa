@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  LATO  */
+@font-face {
+  font-family: 'latoblack';
+  src: url('../latoblack.eot');
+  src: url('../latoblack.eot?#iefix') format('embedded-opentype'),
+       url('../latoblack.woff') format('woff'),
+			 url('../latoblack.ttf') format('truetype'),
+       url('../latoblack.svg#latoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latobold';
+  src: url('../latobold.eot');
+  src: url('../latobold.eot?#iefix') format('embedded-opentype'),
+       url('../latobold.woff') format('woff'),
+			 url('../latobold.ttf') format('truetype'),
+       url('../latobold.svg#latobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latolight';
+  src: url('../latolight.eot');
+  src: url('../latolight.eot?#iefix') format('embedded-opentype'),
+       url('../latolight.woff') format('woff'),
+			 url('../latolight.ttf') format('truetype'),
+       url('../latolight.svg#latolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latoregular';
+  src: url('../latoregular.eot');
+  src: url('../latoregular.eot?#iefix') format('embedded-opentype'),
+       url('../latoregular.woff') format('woff'),
+			 url('../latoregular.ttf') format('truetype'),
+       url('../latoregular.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latothin';
+  src: url('../latothin.eot');
+  src: url('../latothin.eot?#iefix') format('embedded-opentype'),
+       url('../latothin.woff') format('woff'),
+			 url('../latothin.ttf') format('truetype'),
+       url('../latothin.svg#latothin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

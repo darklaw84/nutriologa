@@ -1,0 +1,155 @@
+.mini-cal{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+#monthYear {
+  font-family: 'ClarikaGeo', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  text-transform: capitalize;
+  letter-spacing: 0
+}
+#calTitle{
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px
+}
+#calTitle h3{
+  padding-bottom: 0;
+  width: 90%;
+  font-size: 150%
+}
+#calTitle button{
+  outline: none;
+  display: block;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  min-width: auto;
+  margin: 0 !important;
+  opacity: 0.35;
+  background-size: 100%;
+  position: absolute;
+}
+#calTitle button:hover{
+  opacity: 1
+}
+#calThead, #calTbody{
+  display: flex;
+  flex-wrap: wrap;
+}
+#calThead{
+  align-items: center;
+  text-align: center;
+  color: #d9d3ea;
+  margin-bottom: 5px
+}
+#calThead > div, #calTbody .a-date{
+  box-sizing: border-box;
+  flex: 1;
+  min-width: calc(100% / 7 );
+  max-width: calc(100% / 7);
+  width: calc(100% / 7);
+  text-align: center;
+}
+#calTbody{
+  height: auto;
+  font-family: 'ClarikaGeo', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  align-items: baseline;
+  min-height: 206px
+}
+#calTbody .a-date > span{
+  display: block;
+  padding: 0;
+  letter-spacing: 0
+}
+#calTbody .a-date{
+  position: relative;
+  background-color: transparent;
+  color: #52636d;
+  padding: 3px;
+  border: none;
+  outline: none;
+  font-size: 105%;
+  padding: 0;
+  height: 20px;
+  margin: 7px 0 !important
+}
+#calTbody .a-date:hover{
+  color: black
+}
+#calTbody .a-date.blurred{
+  color: #fff;
+  pointer-events: none;
+  position: relative;
+}
+#calTbody .a-date.blurred::after{
+  content: "·";
+  position: absolute;
+  color: #ccc;
+  top: -15%;
+  font-size: 130%;
+}
+#calTbody .a-date.event:before{
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: #fffc23;
+  border-radius: 50%;
+}
+#calTbody .a-date.current{
+  background: #d9d3ea;
+  outline: none;
+  outline: 0;
+  color: white
+}
+#calTbody .a-date.current.event{
+  background-color: #fffc23;
+  color: #000;
+}
+#calTbody .a-date:focus, #calTbody .a-date:active{
+  background: #6f50d9;
+  color: #fff
+}
+#calTFooter{
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+}
+#calTFooter #calLink{
+  display: inline-block;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+#calTFooter #eventTitle{
+  margin: 0;
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+#calTitle .prev{
+	background: url(../images_w/icons/btn-back.svg) center no-repeat;
+  position: absolute;
+  z-index: 9;
+  left: 0
+}
+#calTitle .next{
+	background: url(../images_w/icons/btn-next.svg) center no-repeat;
+  left: 10% !important;
+}
