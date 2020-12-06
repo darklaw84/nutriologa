@@ -988,10 +988,11 @@ class APIController
         $data['patient'] = $apuntadorPac;
 
         if ($fecha != "") {
-            $fecha = date('Y-m-d', strtotime($fecha . ' + 1 days'));
+            $fecha = date('Y-m-d', strtotime($fecha));
             $datetime = new DateTime($fecha);
 
             $fechaN = $datetime->format(DateTime::ATOM);
+            $fechaN = str_replace("T00:", "T23:", $fechaN);
             $arregloFecha = array("__type" => "Date", "iso" => $fechaN);
             $data['date'] = $arregloFecha;
         }
@@ -1085,7 +1086,7 @@ class APIController
         $data = array(
             "data-binary" => $path
         );
-        
+
         $jsonenviar = json_encode($data);
         curl_setopt_array($curl, array(
             CURLOPT_URL => $url,
@@ -1192,8 +1193,7 @@ class APIController
 
 
 
-        $data = array(
-        );
+        $data = array();
 
         $apuntador = array("__type" => "File", "name" => $nombreFoto, "url" => $urlFoto);
         $data['avatar'] = $apuntador;
@@ -1300,10 +1300,11 @@ class APIController
             "horaFin" => $horaFin
         );
         if ($fecha != "") {
-            $fecha = date('Y-m-d', strtotime($fecha . ' + 1 days'));
+            $fecha = date('Y-m-d', strtotime($fecha ));
             $datetime = new DateTime($fecha);
 
             $fechaN = $datetime->format(DateTime::ATOM);
+            $fechaN= str_replace("T00:","T23:",$fechaN);
             $arregloFecha = array("__type" => "Date", "iso" => $fechaN);
             $data['date'] = $arregloFecha;
         }
@@ -1678,7 +1679,7 @@ class APIController
         $datos['userId'] = $apuntador;
 
         $jsonenviar = json_encode($datos);
-        $data = "where=" . $jsonenviar ;
+        $data = "where=" . $jsonenviar;
 
         $url = sprintf("%s?%s", $url, $data);
 
@@ -1802,13 +1803,13 @@ class APIController
         $url = $this->urlBase . "Appointment";
         $curl = curl_init();
         $datos = array();
-        
+
         $datos['objectId'] = $idCita;
 
         $jsonenviar = json_encode($datos);
-       
-            $data = "where=" . $jsonenviar . "&include=patient";
-        
+
+        $data = "where=" . $jsonenviar . "&include=patient";
+
 
         $url = sprintf("%s?%s", $url, $data);
 
@@ -1840,14 +1841,14 @@ class APIController
         $url = $this->urlBase . "_Session";
         $curl = curl_init();
         $datos = array();
-        
+
         $apuntador = array("__type" => "Pointer", "className" => "_User", "objectId" => $idUsuario);
         $datos['user'] = $apuntador;
 
         $jsonenviar = json_encode($datos);
-       
-            $data = "where=" . $jsonenviar . "&order=updateAt";
-        
+
+        $data = "where=" . $jsonenviar . "&order=updateAt";
+
 
         $url = sprintf("%s?%s", $url, $data);
 
